@@ -1,0 +1,372 @@
+settings:
+  ip_address: 192.168.101.11
+  port: 4196
+  slave_id: 1
+
+registers:
+  - name: power_on_off
+    number: 0
+    count: 1
+    bits:
+      0: floor_heating
+      1: zone_1
+      2: dhw
+      3: zone_2
+
+  - name: setting_mode
+    number: 1
+    count: 1
+
+  - name: flow_temps_set
+    number: 2
+    count: 1
+    split:
+      low: zone_1
+      high: zone_2
+
+#  - name: setting_air_temperature_ts
+#    number: 3
+#    count: 1
+#
+#  - name: t5s
+#    number: 4
+#    count: 1
+#
+  - name: function_setting
+    number: 5
+    count: 1
+    bits:
+      5: holiday_away
+      6: silent_mode
+      7: silent_mode_level
+      8: holiday_home
+      10: eco_mode
+      11: dhw_pump_running_constant_temperature_water_recycling
+      12: curve_setting
+
+  - name: status_bit_1
+    number: 128
+    count: 1
+    bits:
+      2: defrosting
+      3: oil_return
+      4: remote_on_off
+      5: outdoor_unit_test_mode_mark
+      6: room_temperature_controller_heating
+      7: room_temperature_controller_cooling
+      8: solar_energy_signal_input
+      10: SG_1
+      11: EUV_1
+
+  - name: load_output
+    number: 129
+    count: 1
+    bits:
+      0: electric_heater_IBH1
+      2: electric_heater_TBH
+      3: water_pump_PUMP_I
+      4: SV1
+      6: external_water_pump_P_o
+      7: water_return_water_P_d
+      8: mixed_water_pump_P_c
+      9: SV2
+      10: HEAT4
+      11: solar_water_pump
+      12: ALARM
+      13: RUN
+      14: external_heater
+      15: DEFROST
+#
+#  - name: parameter_settings_1
+#    number: 210
+#    count: 1
+#    bits:
+#      0: room_cooling_heating
+#      1: dual_room_thermostat
+#      2: room_thermostat
+#      3: supports_room_thermostat
+#      4: supports_room_temperature_sensor_Ta
+#      5: supports_T1_sensor
+#      6: T1S_heating_high_low_temp
+#      7: enable_heating
+#      8: T1S_cooling_high_low_temp
+#      9: enable_cooling
+#      10: dhw_pump_supports_pipe_disinfect
+#      12: dhw_pump
+#      13: supports_disinfection
+#      14: supports_water_tank_electric_heater
+#      15: enable_water_heating
+
+#  - name: parameter_settings_2
+#    number: 211
+#    count: 1
+#    bits:
+#      3: double_zone
+#      4: heating_temp_T1S
+#      5: cooling_temp_T1S
+#      6: enable_tw2
+#      7: smart_grid
+#      8: define_port
+#
+#
+  - name: setting_mode
+    number: 1
+    count: 1
+    options:
+      1: Auto
+      2: Cool
+      3: Heat
+#  - name: curve_selection
+#    number: 6
+#    count: 1
+#    options:
+#      1537: 1,
+#      1538: 2,
+#      1539: 3,
+#      1540: 4,
+#      1541: 5,
+#      1542: 6,
+#      1543: 7,
+#      1544: 8,
+#      1545: 9
+#
+  - name: operating_frequency
+    number: 100
+    count: 1
+  - name: operating_mode
+    number: 101
+    count: 1
+  - name: fan_speed
+    number: 102
+    count: 1
+  - name: water_inlet_temp
+    number: 104
+    count: 1
+  - name: water_outlet_temp
+    number: 105
+    count: 1
+  - name: condenser_temp
+    number: 106
+    count: 1
+  - name: outside_ambient_temperature
+    number: 107
+    count: 1
+  - name: compressor_discharge_temp
+    number: 108
+    count: 1
+  - name: compressor_air_return_temp
+    number: 109
+    count: 1
+  - name: total_water_outlet_temp
+    number: 110
+    count: 1
+  - name: system_total_water_outlet_temp
+    number: 111
+    count: 1
+  - name: refrigerant_liquid_side_temp
+    number: 112
+    count: 1
+  - name: refrigerant_gas_side_temp
+    number: 113
+    count: 1
+#  - name: room_temp
+#    number: 114
+#    count: 1
+#  - name: water_tank_temp
+#    number: 115
+#    count: 1
+  - name: outdoor_unit_high_pressure
+    number: 116
+    count: 1
+  - name: outdoor_unit_low_pressure
+    number: 117
+    count: 1
+  - name: outdoor_unit_operating_current
+    number: 118
+    count: 1
+  - name: outdoor_unit_voltage
+    number: 119
+    count: 1
+  - name: compressor_operating_time
+    number: 122
+    count: 1
+  - name: current_fault
+    number: 124
+    count: 1
+#  - name: version_number
+#    number: 130
+#    count: 1
+#  - name: controller_version_number
+#    number: 131
+#    count: 1
+  - name: unit_target_frequency
+    number: 132
+    count: 1
+#  - name: dc_bus_current
+#    number: 133
+#    count: 1
+#  - name: dc_bus_voltage
+#    number: 134
+#    count: 1
+#  - name: tf_module_temp
+#    number: 135
+#    count: 1
+#  - name: curve_zone_1
+#    number: 136
+#    count: 1
+#  - name: curve_zone_2
+#    number: 137
+#    count: 1
+  - name: water_flow
+    number: 138
+    count: 1
+#  - name: limit_scheme_current
+#    number: 139
+#    count: 1
+  - name: heat_capacity
+    number: 140
+    count: 1
+
+#  - name: temperature_upper_limit_of_t1s_cooling
+#    number: 201
+#    count: 1
+#  - name: temperature_lower_limit_of_t1s_cooling
+#    number: 202
+#    count: 1
+#  - name: temperature_upper_limit_of_t1s_heating
+#    number: 203
+#    count: 1
+#  - name: temperature_lower_limit_of_t1s_heating
+#    number: 204
+#    count: 1
+#  - name: temperature_upper_limit_of_ts_setting
+#    number: 205
+#    count: 1
+#  - name: temperature_lower_limit_of_ts_setting
+#    number: 206
+#    count: 1
+#  - name: temperature_upper_limit_of_water_heating
+#    number: 207
+#    count: 1
+#  - name: temperature_lower_limit_of_water_heating
+#    number: 208
+#    count: 1
+#  - name: dhw_pump_running_time
+#    number: 209
+#    count: 1
+#  - name: dt5_on
+#    number: 212
+#    count: 1
+#  - name: dt1s5
+#    number: 213
+#    count: 1
+#  - name: t_interval_dhw
+#    number: 214
+#    count: 1
+#  - name: t4dhwmax
+#    number: 215
+#    count: 1
+#  - name: t4dhwmin
+#    number: 216
+#    count: 1
+#  - name: t_tbh_delay
+#    number: 217
+#    count: 1
+#  - name: dt5_tbh_off
+#    number: 218
+#    count: 1
+#  - name: t4_tbh_on
+#    number: 219
+#    count: 1
+#  - name: t5s_di
+#    number: 220
+#    count: 1
+#  - name: t_di_max
+#    number: 221
+#    count: 1
+#  - name: t_di_hightemp
+#    number: 222
+#    count: 1
+#  - name: t_interval_c
+#    number: 223
+#    count: 1
+  - name: dt1sc
+    number: 224
+    count: 1
+  - name: dtsc
+    number: 225
+    count: 1
+#  - name: t4cmax
+#    number: 226
+#    count: 1
+#  - name: t4cmin
+#    number: 227
+#    count: 1
+#  - name: t_interval_h
+#    number: 228
+#    count: 1
+  - name: dt1sh
+    number: 229
+    count: 1
+#  - name: dtsh
+#    number: 230
+#    count: 1
+#  - name: t4hmax
+#    number: 231
+#    count: 1
+#  - name: t4hmin
+#    number: 232
+#    count: 1
+#  - name: t4_ibh_on
+#    number: 233
+#    count: 1
+#  - name: dt1_ibh_on
+#    number: 234
+#    count: 1
+#  - name: t_ibh_delay
+#    number: 235
+#    count: 1
+#  - name: t4_ahs_on
+#    number: 237
+#    count: 1
+#  - name: dt1_ahs_on
+#    number: 238
+#    count: 1
+#  - name: t_ahs_delay
+#    number: 240
+#    count: 1
+#  - name: t_dwhp_max
+#    number: 241
+#    count: 1
+#  - name: t_dwhp_restrict
+#    number: 242
+#    count: 1
+#  - name: t4autocmin
+#    number: 243
+#    count: 1
+#  - name: t4autohmax
+#    number: 244
+#    count: 1
+#  - name: t1s_h_a_h
+#    number: 245
+#    count: 1
+#  - name: t5s_h_a_dhw
+#    number: 246
+#    count: 1
+#
+#
+#
+#
+#
+#  - name: heating_curve_max_temp_zone_1
+#    number: 265
+#    count: 1
+#  - name: heating_curve_max_temp_zone_2
+#    number: 266
+#    count: 1
+#  - name: heating_curve_design_temp_zone_1
+#    number: 267
+#    count: 1
+#  - name: heating_curve_design_temp_zone_2
+#    number: 267
+#    count: 1

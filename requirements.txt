@@ -1,0 +1,4 @@
+celery
+redis
+pyyaml
+pymodbus==3.6.8
